@@ -1,4 +1,6 @@
 {
 	"git.ignoreLimitWarning": true,
-	"clockify.tracking.workspaceId": "629e9926ee936d4be8a6fc3f"
+	"clockify.tracking.workspaceId": "629e9926ee936d4be8a6fc3f",
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"npm-scripts.showStartNotification": false
 }
