@@ -5,12 +5,12 @@ const { result } = concurrently(
 	[
 		{
 			command: "sanity start",
-			name: "Start Sanity",
+			name: "Sanity Studio server",
 			cwd: path.resolve(__dirname, "sanity"),
 		},
 		{
 			command: "next dev",
-			name: "Start development server",
+			name: "Web server",
 		},
 	],
 	{
