@@ -22,9 +22,9 @@ const { result } = concurrently(
 result.then(success, failure);
 
 function success() {
-	console.log("Started servers");
+	console.log("Closed servers");
 }
 
 function failure() {
-	console.log("Failure");
+	console.log("Failure closing servers");
 }

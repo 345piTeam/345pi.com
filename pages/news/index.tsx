@@ -19,12 +19,14 @@ export default function News({ posts }: Prop) {
 			<main>
 				{posts.map((post: Post) => (
 					<Link key={post._id} href={"news/" + post.slug.current}>
-						<div className="bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto text-center ease-in duration-300 transition-all">
-							<h1 className="text-7xl font-bold">{post.title}</h1>
+						<div className="bg-gradient-to-r from-cyan-500 to-blue-400 max-w-md cursor-pointer m-2 px-2 py-4 rounde">
+							<h1 className="text-center text-4xl font-bold">{post.title}</h1>
 							<div className="">
 								<Image
 									alt={"Author's Profile Picture"}
 									src={urlFor(post.author.image).url()!}
+									width="50"
+									height="50"
 								></Image>
 								{post.author.name}
 							</div>
