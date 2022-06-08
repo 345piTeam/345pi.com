@@ -9,7 +9,7 @@ export interface Post {
     description: string;
     mainImage: {
         asset: {
-            url: string;
+			_ref: string;
         };
     };
     slug: {

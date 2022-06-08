@@ -5,7 +5,7 @@ export const config = {
 	dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
 	projectId: process.env.NEXT_PUBLIC_SANITY_ID,
 	apiVersion: "2021-10-21",
-	useCnd: process.env.NODE_ENV === "production",
+	useCdn: process.env.NODE_ENV === "production",
 };
 
 const builder = createImageUrlBuilder(config);
