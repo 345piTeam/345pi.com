@@ -1,6 +1,6 @@
 export default {
 	name: "post-copy",
-	title: "Post Copy",
+	title: "New Test Schema",
 	type: "document",
 	fields: [
 		{
