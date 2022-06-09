@@ -9,6 +9,7 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
 						rel="stylesheet"
 					/>
+					<meta charSet="UTF-8" />
 				</Head>
 				<body className="dark:bg-gray-900 dark:text-white">
 					<Main />
