@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import pi345_logo from "../public/345pi_logo.png";
+import pi345_logo_dark from "../public/345pi_logo_darkMode.png";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -20,11 +21,19 @@ export default function Navbar() {
 	return (
 		<div className="h-28 flex flex-row">
 			<Link href="/">
-				<Image
-					className="scale-90 -translate-x-2"
-					alt="345pi Logo"
-					src={pi345_logo}
-				/>
+				{theme === LIGHT_THEME ? (
+					<Image
+						className="scale-90 -translate-x-2 cursor-pointer"
+						alt="345pi Logo"
+						src={pi345_logo}
+					/>
+				) : (
+					<Image
+						className="scale-90 -translate-x-2 cursor-pointer"
+						alt="345pi Logo"
+						src={pi345_logo_dark}
+					/>
+				)}
 			</Link>
 			<div className="">
 				<Link href="/">Home</Link>
@@ -36,8 +45,13 @@ export default function Navbar() {
 				onClick={() => {
 					switchTheme();
 				}}
+				className="absolute right-2 top-2 text-3xl"
 			>
-				<h1>&#x2600;</h1>
+				{theme === LIGHT_THEME ? (
+					<h1>&#x2600;</h1>
+				) : (
+					<h1 className="-translate-x-2"> &#x263d;</h1>
+				)}
 			</button>
 			<div>Launch App</div>
 		</div>
