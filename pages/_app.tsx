@@ -1,19 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Navbar from "../components/navbar";
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
+import { DefaultLayout } from "../layouts/DefaultLayout";
 
-export function DefaultLayout({ children }: { children: ReactElement }) {
-	return (
-		<>
-			<Navbar />
-			<main>{children}</main>
-		</>
-	);
-}
-
-type NextPageWithLayout = NextPage & {
+export type NextPageWithLayout = NextPage & {
 	getLayout?: (page: ReactElement) => ReactNode;
 };
 
@@ -22,15 +13,10 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-	if (Component.getLayout) {
-		return <>{Component.getLayout(pageProps)}</>;
-	}
+	const getLayout =
+		Component.getLayout || ((page) => <DefaultLayout>{page}</DefaultLayout>);
 
-	return (
-		<DefaultLayout>
-			<Component {...pageProps} />
-		</DefaultLayout>
-	);
+	return getLayout(<Component {...pageProps} />);
 }
 
 export default MyApp;

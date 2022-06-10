@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Navbar() {
+	// TODO move to context
 	const LIGHT_THEME = "light";
 	const DARK_THEME = "dark";
 	const [theme, setTheme] = useState(LIGHT_THEME);
@@ -35,31 +36,33 @@ export default function Navbar() {
 	};
 
 	return (
-		<div className="h-28 flex flex-row w-11/12 items-center">
+		<div className="h-28 flex flex-row w-[95%] items-center">
 			<Link href="/">
 				{theme === LIGHT_THEME ? (
 					<Image
-						className="scale-90 -translate-x-2 cursor-pointer"
+						className="scale-90 -translate-x-4 cursor-pointer"
 						alt="345pi Logo"
 						src={pi345_logo}
 					/>
 				) : (
 					<Image
-						className="scale-90 -translate-x-2 cursor-pointer"
+						className="scale-90 -translate-x-4 cursor-pointer"
 						alt="345pi Logo"
 						src={pi345_logo_dark}
 					/>
 				)}
 			</Link>
 			<div className="flex flex-row justify-between w-fit grow text-center align-middle cursor-pointer">
-				{NavbarItem("home", "/home")}
+				{NavbarItem("home", "/")}
 				{NavbarItem("about", "/about")}
 				{NavbarItem("whitepaper", "/whitepaper")}
 				{NavbarItem("news", "/news")}
 			</div>
-			<div className="flex justify-center items-center cursor-pointer bg-green-600 hover:bg-green-700 px-8 h-12 rounded-full">
-				<h2 className="-translate-y-1 text-white text-xl">Launch App</h2>
-			</div>
+			<a href="https://345pi.us/" target="_blank" rel="noreferrer">
+				<div className="flex justify-center items-center cursor-pointer bg-green-600 hover:bg-green-700 px-8 h-12 rounded-full">
+					<h2 className="-translate-y-1 text-white text-xl">Launch App</h2>
+				</div>
+			</a>
 			<button
 				onClick={() => {
 					switchTheme();
