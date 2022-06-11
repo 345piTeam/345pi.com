@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 					<Image
 						alt="Hexagon Background Image"
 						src={hexagon}
-						height={500}
+						height={550}
 						width={500}
 					/>
 				</div>

@@ -36,17 +36,17 @@ export default function Navbar() {
 	};
 
 	return (
-		<div className="h-28 flex flex-row w-[95%] items-center mb-5">
+		<div className="flex flex-row w-[95%] items-center mb-5">
 			<Link href="/">
 				{theme === LIGHT_THEME ? (
 					<Image
-						className="scale-90 -translate-x-4 cursor-pointer"
+						className="scale-75 -translate-x-8 cursor-pointer"
 						alt="345pi Logo"
 						src={pi345_logo}
 					/>
 				) : (
 					<Image
-						className="scale-90 -translate-x-4 cursor-pointer"
+						className="scale-75 -translate-x-8 cursor-pointer"
 						alt="345pi Logo"
 						src={pi345_logo_dark}
 					/>
