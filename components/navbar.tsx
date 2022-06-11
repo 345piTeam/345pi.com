@@ -36,7 +36,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<div className="h-28 flex flex-row w-[95%] items-center">
+		<div className="h-28 flex flex-row w-[95%] items-center mb-5">
 			<Link href="/">
 				{theme === LIGHT_THEME ? (
 					<Image
@@ -70,9 +70,13 @@ export default function Navbar() {
 				className="absolute right-1 top-2 text-3xl leading-6"
 			>
 				{theme === LIGHT_THEME ? (
-					<h1>&#x2600;</h1>
+					<h1 className="hover:rotate-6 hover:scale-105 transition-all duration-100 ease-in-out">
+						&#x2600;
+					</h1>
 				) : (
-					<h1 className="-translate-x-2">&#x263d;</h1>
+					<h1 className="mr-3 hover:rotate-12 hover:scale-105 transition-all duration-100 ease-in-out">
+						&#x263d;
+					</h1>
 				)}
 			</button>
 		</div>
