@@ -70,11 +70,11 @@ export default function Navbar() {
 				className="absolute right-1 top-2 text-3xl leading-6"
 			>
 				{theme === LIGHT_THEME ? (
-					<h1 className="hover:rotate-6 hover:scale-105 transition-all duration-100 ease-in-out">
+					<h1 className="mr-2 hover:rotate-6 hover:scale-105 transition-all duration-100 ease-in-out">
 						&#x2600;
 					</h1>
 				) : (
-					<h1 className="mr-3 hover:rotate-12 hover:scale-105 transition-all duration-100 ease-in-out">
+					<h1 className="mr-4 hover:rotate-12 hover:scale-105 transition-all duration-100 ease-in-out">
 						&#x263d;
 					</h1>
 				)}

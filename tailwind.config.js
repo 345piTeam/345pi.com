@@ -1,4 +1,5 @@
 const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
 	darkMode: "class",
@@ -8,10 +9,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: (theme) => ({
-				"345pi-logo-light": "url('/345pi_logo.png')",
-				"345pi-logo-dark": "url('/345pi_logo_darkMode.png')",
-			}),
+			fontFamily: {
+				sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+			},
 		},
 	},
 	variants: {
@@ -19,5 +19,9 @@ module.exports = {
 			backgroundImage: ["dark"],
 		},
 	},
-	plugins: [require("@tailwindcss/line-clamp"), require("@tailwindcss/forms")],
+	plugins: [
+		require("@tailwindcss/line-clamp"),
+		require("@tailwindcss/forms"),
+		require("tailwind-children"),
+	],
 };

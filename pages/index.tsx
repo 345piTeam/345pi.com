@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import Head from "next/head";
-import Hexagon from "../components/hexagon";
+import TitleHexagon from "../components/titleHexagon";
 import hexagon from "../public/hexagon-homescreen-with-text.png";
 import Image from "next/image";
 
@@ -19,12 +19,14 @@ const Home: NextPage = () => {
 
 			<main>
 				<div className="flex justify-center">
-					<Image
-						alt="Hexagon Background Image"
+					{/* <Image
+						alt="TitleHexagon Background Image"
 						src={hexagon}
 						height={550}
 						width={500}
-					/>
+					/> */}
+
+					<TitleHexagon />
 				</div>
 			</main>
 		</div>
