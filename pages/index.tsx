@@ -31,7 +31,7 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 };
 
 export const getStaticProps = async () => {
-	const query = `*[_type == "information"] {
+	const query = `*[_type == "information"] | order(_createdAt asc) {
 		title,
 		body,
 		slug,

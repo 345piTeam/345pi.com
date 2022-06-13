@@ -11,7 +11,7 @@ interface Props {
 
 const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 	return (
-		<div>
+		<div className="flex flex-col">
 			{info.map((cell, index) => {
 				return (
 					<div
@@ -22,7 +22,6 @@ const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 						}
 					>
 						<Image
-							className="rounded-full"
 							alt="Image"
 							src={urlFor(cell.mainImage.asset).url()}
 							width="500"

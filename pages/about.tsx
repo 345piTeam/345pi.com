@@ -6,7 +6,7 @@ const About = () => {
 			<Head>
 				<title>345pi - about</title>
 			</Head>
-			<div className="w-screen flex align-center text-4xl">
+			<div className="w-screen flex justify-center text-4xl">
 				<h1>Our Team</h1>
 			</div>
 		</>

@@ -36,7 +36,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<div className="flex flex-row w-[95%] items-center mb-5">
+		<div className="flex flex-row w-[96%] items-center mb-5">
 			<Link href="/">
 				<a>
 					{theme === LIGHT_THEME ? (

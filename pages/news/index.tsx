@@ -18,11 +18,11 @@ export default function News({ posts }: Prop) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-5">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-5">
 					{posts.map((post: Post) => {
 						return (
 							<Link key={post._id} href={"news/" + post.slug.current}>
-								<div className="max-w-xl cursor-pointer m-2 rounded-md group drop-shadow-lg dark:drop-shadow-none overflow-hidden bg-white dark:bg-slate-800">
+								<div className="sm:max-w-xl cursor-pointer m-2 rounded-md group drop-shadow-lg dark:drop-shadow-none overflow-hidden bg-white dark:bg-slate-800">
 									<div className="">
 										<img
 											className="w-full object-cover h-40 group-hover:scale-105 group-hover:-translate-y-1 transition-transform duration-150 ease-in-out"
@@ -60,7 +60,7 @@ export default function News({ posts }: Prop) {
 }
 
 export const getServerSideProps = async () => {
-	const query = `*[_type == "post"]{
+	const query = `*[_type == "post"] | order(_createdAt desc) {
 		_id,
 		_createdAt,
 		title,
