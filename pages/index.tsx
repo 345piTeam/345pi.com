@@ -1,11 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
-import type { NextPage } from "next";
 import Head from "next/head";
-import TitleHexagon from "../components/titleHexagon";
-import hexagon from "../public/hexagon-homescreen-with-text.png";
-import Image from "next/image";
+import { FunctionComponent } from "react";
+import TitleHexagon from "../components/homepage/hexagon";
+import HomescreenInfo from "../components/homepage/homescreenInformation";
+import { sanityClient } from "../sanity";
+import { Information } from "../typings";
 
-const Home: NextPage = () => {
+interface Props {
+	info: Information[];
+}
+
+const Home: FunctionComponent<Props> = ({ info }) => {
 	return (
 		<div>
 			<Head>
@@ -14,23 +18,40 @@ const Home: NextPage = () => {
 					name="description"
 					content="Information site for the 345pi web3 application"
 				/>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<main>
 				<div className="flex justify-center">
-					{/* <Image
-						alt="TitleHexagon Background Image"
-						src={hexagon}
-						height={550}
-						width={500}
-					/> */}
-
 					<TitleHexagon />
 				</div>
+				<HomescreenInfo info={info} />
 			</main>
 		</div>
 	);
+};
+
+export const getStaticProps = async () => {
+	const query = `*[_type == "information"] {
+		title,
+		body,
+		slug,
+		mainImage
+	  }`;
+	const info = await sanityClient.fetch(query);
+
+	if (!info) {
+		// If there is a server error, you might want to
+		// throw an error instead of returning so that the cache is not updated
+		// until the next successful request.
+		throw new Error(`Failed to fetch posts, received status ${info.status}`);
+	}
+
+	return {
+		props: {
+			info,
+		},
+		revalidate: 600,
+	};
 };
 
 export default Home;

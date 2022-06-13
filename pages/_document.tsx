@@ -10,6 +10,7 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 					<meta charSet="UTF-8" />
+					<link rel="icon" href="/favicon.ico" />
 				</Head>
 				<body className="dark:bg-gray-900 dark:text-white">
 					<Main />

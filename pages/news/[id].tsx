@@ -4,7 +4,7 @@ import { Post } from "../../typings";
 import { sanityClient, urlFor } from "../../sanity";
 
 interface Props {
-	posts: [Post];
+	posts: Post[];
 }
 
 export default function SinglePost({ posts }: Props) {

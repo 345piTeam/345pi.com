@@ -7,7 +7,6 @@ export interface Post {
         name: string;
         image: string;
     }
-    description: string;
     mainImage: {
         asset: {
 			_ref: string;
@@ -16,5 +15,18 @@ export interface Post {
     slug: {
         current: string;
     }
-    body: [object];
+    body: object[],
+}
+
+export interface Information {
+    slug: {
+        current: string;
+    },
+    title: string,
+    mainImage: {
+        asset: {
+            _ref: string;
+        }
+    }
+    body: object[]
 }

@@ -38,19 +38,21 @@ export default function Navbar() {
 	return (
 		<div className="flex flex-row w-[95%] items-center mb-5">
 			<Link href="/">
-				{theme === LIGHT_THEME ? (
-					<Image
-						className="scale-75 -translate-x-8 cursor-pointer"
-						alt="345pi Logo"
-						src={pi345_logo}
-					/>
-				) : (
-					<Image
-						className="scale-75 -translate-x-8 cursor-pointer"
-						alt="345pi Logo"
-						src={pi345_logo_dark}
-					/>
-				)}
+				<a>
+					{theme === LIGHT_THEME ? (
+						<Image
+							className="scale-75 -translate-x-8 cursor-pointer"
+							alt="345pi Logo"
+							src={pi345_logo}
+						/>
+					) : (
+						<Image
+							className="scale-75 -translate-x-8 cursor-pointer"
+							alt="345pi Logo"
+							src={pi345_logo_dark}
+						/>
+					)}
+				</a>
 			</Link>
 			<div className="flex flex-row justify-between w-fit grow text-center align-middle cursor-pointer">
 				{NavbarItem("home", "/")}
@@ -60,7 +62,9 @@ export default function Navbar() {
 			</div>
 			<a href="https://345pi.us/" target="_blank" rel="noreferrer">
 				<div className="flex justify-center items-center cursor-pointer bg-green-600 hover:bg-green-700 px-8 h-12 rounded-full">
-					<h2 className="-translate-y-1 text-white text-xl">Launch App</h2>
+					<h2 className="-translate-y-1 text-white text-sm lg:text-lg">
+						Launch App
+					</h2>
 				</div>
 			</a>
 			<button
@@ -70,11 +74,11 @@ export default function Navbar() {
 				className="absolute right-1 top-2 text-3xl leading-6"
 			>
 				{theme === LIGHT_THEME ? (
-					<h1 className="mr-2 hover:rotate-6 hover:scale-105 transition-all duration-100 ease-in-out">
+					<h1 className="mr-2 hover:rotate-6 hover:scale-105 transition-all duration-100 ease-in-out translate-y-1">
 						&#x2600;
 					</h1>
 				) : (
-					<h1 className="mr-4 hover:rotate-12 hover:scale-105 transition-all duration-100 ease-in-out">
+					<h1 className="mr-4 hover:rotate-12 hover:scale-105 transition-all duration-100 ease-in-out translate-y-1">
 						&#x263d;
 					</h1>
 				)}

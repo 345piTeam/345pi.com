@@ -19,9 +19,5 @@ module.exports = {
 			backgroundImage: ["dark"],
 		},
 	},
-	plugins: [
-		require("@tailwindcss/line-clamp"),
-		require("@tailwindcss/forms"),
-		require("tailwind-children"),
-	],
+	plugins: [require("@tailwindcss/line-clamp"), require("@tailwindcss/forms")],
 };
