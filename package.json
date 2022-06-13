@@ -8,6 +8,10 @@
 		"start": "next start",
 		"lint": "next lint"
 	},
+	"engines": {
+		"node": "18.x",
+		"yarn": "1.x"
+	},
 	"dependencies": {
 		"@sanity/client": "^3.3.2",
 		"@sanity/image-url": "^1.0.1",
