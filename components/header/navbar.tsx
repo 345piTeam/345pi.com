@@ -1,25 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import pi345_logo from "../public/345pi_logo.png";
-import pi345_logo_dark from "../public/345pi_logo_darkMode.png";
-import { useState } from "react";
+import pi345_logo from "../../public/345pi_logo.png";
+import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
+import ThemeToggle from "./themeChanger";
 
 export default function Navbar() {
-	// TODO move to context
-	const LIGHT_THEME = "light";
-	const DARK_THEME = "dark";
-	const [theme, setTheme] = useState(LIGHT_THEME);
 	const router = useRouter();
-	const switchTheme = () => {
-		if (!document.documentElement.classList.contains(DARK_THEME)) {
-			document.documentElement.classList.add(DARK_THEME);
-			setTheme(DARK_THEME);
-		} else {
-			document.documentElement.classList.remove(DARK_THEME);
-			setTheme(LIGHT_THEME);
-		}
-	};
+	const { resolvedTheme } = useTheme();
 
 	const NavbarItem = (name: string, path: string) => {
 		let cName =
@@ -39,7 +29,7 @@ export default function Navbar() {
 		<div className="flex flex-row w-[96%] items-center mb-5">
 			<Link href="/">
 				<a>
-					{theme === LIGHT_THEME ? (
+					{resolvedTheme === "light" ? (
 						<Image
 							className="scale-75 -translate-x-8 cursor-pointer"
 							alt="345pi Logo"
@@ -67,22 +57,7 @@ export default function Navbar() {
 					</h2>
 				</div>
 			</a>
-			<button
-				onClick={() => {
-					switchTheme();
-				}}
-				className="absolute right-1 top-2 text-3xl leading-6"
-			>
-				{theme === LIGHT_THEME ? (
-					<h1 className="mr-2 hover:rotate-6 hover:scale-105 transition-all duration-100 ease-in-out translate-y-1">
-						&#x2600;
-					</h1>
-				) : (
-					<h1 className="mr-4 hover:rotate-12 hover:scale-105 transition-all duration-100 ease-in-out translate-y-1">
-						&#x263d;
-					</h1>
-				)}
-			</button>
+			<ThemeToggle />
 		</div>
 	);
 }

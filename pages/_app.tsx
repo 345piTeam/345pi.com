@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import { DefaultLayout } from "../layouts/DefaultLayout";
+import { ThemeProvider } from "next-themes";
 
 export type NextPageWithLayout = NextPage & {
 	getLayout?: (page: ReactElement) => ReactNode;
@@ -16,7 +17,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 	const getLayout =
 		Component.getLayout || ((page) => <DefaultLayout>{page}</DefaultLayout>);
 
-	return getLayout(<Component {...pageProps} />);
+	return getLayout(
+		<ThemeProvider attribute="class">
+			<Component {...pageProps} />
+		</ThemeProvider>
+	);
 }
 
 export default MyApp;
