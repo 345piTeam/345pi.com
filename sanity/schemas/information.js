@@ -1,6 +1,6 @@
 export default {
 	name: "information",
-	title: "Information",
+	title: "Homepage Information",
 	type: "document",
 	fields: [
 		{

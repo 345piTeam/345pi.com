@@ -9,6 +9,7 @@ import blockContent from "./blockContent";
 import category from "./category";
 import post from "./post";
 import information from "./information";
+import darkLord from "./darkLord";
 import author from "./author";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -21,6 +22,7 @@ export default createSchema({
 		// The following are document types which will appear
 		// in the studio.
 		post,
+		darkLord,
 		author,
 		category,
 		information,
