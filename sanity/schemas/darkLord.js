@@ -4,7 +4,7 @@ export default {
 	type: "document",
 	fields: [
 		{
-			name: "realName",
+			name: "name",
 			title: "Real Name",
 			description: "First and Last",
 			type: "string",
@@ -20,7 +20,7 @@ export default {
 			title: "Slug",
 			type: "slug",
 			options: {
-				source: "realName",
+				source: "userName",
 				maxLength: 96,
 			},
 		},
