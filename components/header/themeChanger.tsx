@@ -9,11 +9,9 @@ const ThemeToggle = () => {
 
 	if (!mounted) return null;
 
-	console.log(resolvedTheme);
 	return (
 		<button
 			onClick={() => {
-				console.log("changing theme");
 				setTheme(theme === "light" ? "dark" : "light");
 			}}
 			className="absolute right-1 top-2 text-3xl leading-6"

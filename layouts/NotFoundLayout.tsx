@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import { JSXElementConstructor, ReactElement } from "react";
 
 const NotFoundLayout = ({ children }: { children: ReactElement }) => {

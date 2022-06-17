@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import { ReactElement } from "react";
 import Navbar from "../components/header/navbar";
 
