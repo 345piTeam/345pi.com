@@ -14,7 +14,8 @@
     "@sanity/desk-tool",
     "media",
     "content-calendar",
-    "asset-source-unsplash"
+    "asset-source-unsplash",
+    "@sanity/vision"
   ],
   "env": {
     "development": {
