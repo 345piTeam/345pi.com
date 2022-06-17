@@ -5,7 +5,7 @@ import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
-import ThemeToggle from "./themeChanger";
+import ThemeToggle from "./themeToggle";
 
 export default function Navbar() {
 	const router = useRouter();
