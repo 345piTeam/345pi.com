@@ -52,9 +52,7 @@ export default function Navbar() {
 			</div>
 			<a href="https://345pi.us/" target="_blank" rel="noreferrer">
 				<div className="flex justify-center items-center cursor-pointer bg-green-600 hover:bg-green-700 px-8 h-12 rounded-full">
-					<h2 className="-translate-y-1 text-white text-sm lg:text-lg">
-						Launch App
-					</h2>
+					<h2 className="text-white text-sm lg:text-lg">Launch App</h2>
 				</div>
 			</a>
 			<ThemeToggle />
