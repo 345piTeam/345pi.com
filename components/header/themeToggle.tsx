@@ -7,6 +7,7 @@ const ThemeToggle = () => {
 
 	useEffect(() => setMounted(true), []);
 
+	// Used to delay returning until component has been mounted. This is necessary for SSR to work properly with a theme switcher.
 	if (!mounted) return null;
 
 	return (
@@ -19,7 +20,7 @@ const ThemeToggle = () => {
 			{resolvedTheme === "light" ? (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6"
+					className="h-6 w-6 hover:h-7 hover:w-7 transition-all duration-200 ease-in-out"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -34,7 +35,7 @@ const ThemeToggle = () => {
 			) : (
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-5 w-5"
+					className="h-5 w-5 hover:h-6 hover:w-6 transition-all duration-200 ease-in-out"
 					viewBox="0 0 20 20"
 					fill="currentColor"
 				>

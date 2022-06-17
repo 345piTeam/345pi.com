@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from "react";
-import { Information } from "../../typings";
+import { HomepageInformation } from "../../typings";
 import { urlFor } from "../../sanity";
 import Image from "next/image";
 import PortableText from "react-portable-text";
 
 interface Props {
-	info: Information[];
+	info: HomepageInformation[];
 }
 
 const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
