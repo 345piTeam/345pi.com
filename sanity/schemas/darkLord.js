@@ -25,7 +25,7 @@ export default {
 			},
 		},
 		{
-			name: "profileImage",
+			name: "image",
 			title: "Profile Image",
 			description: "Image of your face",
 			type: "image",
