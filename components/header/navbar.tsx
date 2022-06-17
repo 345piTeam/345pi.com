@@ -2,28 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import pi345_logo from "../../public/345pi_logo.png";
 import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./themeToggle";
+import NavbarItem from "./navbarItem";
 
 export default function Navbar() {
-	const router = useRouter();
 	const { resolvedTheme } = useTheme();
-
-	const NavbarItem = (name: string, path: string) => {
-		let cName =
-			"text-2xl grow hover:underline underline-offset-8 leading-[5] uppercase";
-		cName =
-			router.asPath === path || (router.asPath === "/" && path === "/home")
-				? cName + " underline"
-				: cName;
-		return (
-			<Link href={path}>
-				<h2 className={cName}>{name}</h2>
-			</Link>
-		);
-	};
 
 	return (
 		<div className="flex flex-row w-[96%] items-center mb-5">
