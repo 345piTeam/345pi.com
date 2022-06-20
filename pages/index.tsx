@@ -3,10 +3,10 @@ import { FunctionComponent } from "react";
 import TitleHexagon from "../components/homepage/hexagon";
 import HomescreenInfo from "../components/homepage/homescreenInformation";
 import { sanityClient } from "../sanity";
-import { Information } from "../typings";
+import { HomepageInformation } from "../typings";
 
 interface Props {
-	info: Information[];
+	info: HomepageInformation[];
 }
 
 const Home: FunctionComponent<Props> = ({ info }) => {
@@ -50,7 +50,7 @@ export const getStaticProps = async () => {
 		props: {
 			info,
 		},
-		revalidate: 600,
+		revalidate: 60,
 	};
 };
 
