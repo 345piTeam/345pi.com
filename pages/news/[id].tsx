@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import { Post } from "../../typings";
 import { sanityClient, urlFor } from "../../sanity";
@@ -7,7 +6,7 @@ interface Props {
 	posts: Post[];
 }
 
-export default function SinglePost({ posts }: Props) {
+const SinglePost: React.FC<Props> = ({ posts }) => {
 	return (
 		<div>
 			<Head>
@@ -23,14 +22,21 @@ export default function SinglePost({ posts }: Props) {
 			</main>
 		</div>
 	);
-}
+};
 
 export const getServerSideProps = async () => {
 	const query = `*[_type == "post"]`;
 	const posts = await sanityClient.fetch(query);
+
+	if (!posts) {
+		throw new Error(`Failed to fetch posts, received status ${posts.status}`);
+	}
+
 	return {
 		props: {
 			posts,
 		},
 	};
 };
+
+export default SinglePost;

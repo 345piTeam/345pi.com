@@ -16,7 +16,7 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 				<title>345pi</title>
 				<meta
 					name="description"
-					content="Information site for the 345pi web3 application"
+					content="Information site for the 345pi.us web3 application"
 				/>
 			</Head>
 
