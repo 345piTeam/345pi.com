@@ -8,22 +8,23 @@ interface Props {
 }
 
 const TeamMember: React.FC<Props> = ({ data }) => {
+	const imageSize = 250;
 	return (
-		<div className="flex flex-col items-center">
-			<div>
+		<div className="flex flex-col items-center basis-1/3 grow">
+			<div className="relative w-64 h-64 rounded-full overflow-hidden">
 				{data.image ? (
 					<Image
 						alt="Dark Lord Profile Image"
 						src={urlFor(data.image).url()}
-						width="250"
-						height="250"
+						layout={"fill"}
+						objectFit={"cover"}
 					/>
 				) : (
 					<Image
 						alt="Placeholder"
 						src={placeholderAvatar}
-						width="250"
-						height="250"
+						width={imageSize}
+						height={imageSize}
 					/>
 				)}
 			</div>
