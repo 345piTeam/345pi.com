@@ -2,7 +2,7 @@ import Image from "next/image";
 import hexagon from "../../public/homescreen-hexagon.png";
 
 const TitleHexagon: React.FC = () => (
-	<div className="relative [&>*]:absolute [&>*]:select-none text-white text-center mb-10">
+	<div className="relative [&>*]:absolute [&>*]:select-none text-white text-center">
 		<Image
 			className="left-0 top-0"
 			alt="Title background image"

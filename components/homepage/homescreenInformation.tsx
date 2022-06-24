@@ -11,7 +11,7 @@ interface Props {
 
 const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col my-24">
 			{info.map((cell, index) => {
 				return (
 					<div
@@ -24,8 +24,8 @@ const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 						<Image
 							alt="Image"
 							src={urlFor(cell.mainImage.asset).url()}
-							width="500"
-							height="500"
+							width="400"
+							height="400"
 						/>
 						<div className="flex flex-col gap-6 p-5 max-w-prose">
 							<h1 className="font-bold text-6xl">{cell.title}</h1>
