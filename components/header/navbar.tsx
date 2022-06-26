@@ -4,10 +4,35 @@ import pi345_logo from "../../public/345pi_logo.png";
 import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./themeToggle";
-import NavbarItem from "./navbarItem";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Navbar() {
 	const { resolvedTheme } = useTheme();
+	const [burgerToggle, setBurgerToggle] = useState(false);
+	const router = useRouter();
+
+	const toggleBurger = () => {
+		setBurgerToggle((prev) => !prev);
+	};
+
+	const NavbarItem = (name: string, path: string) => {
+		return (
+			<Link href={path}>
+				<h2
+					className={
+						"text-2xl grow hover:underline transition-all duration-200 ease-in-out underline-offset-8 leading-[5] uppercase" +
+						(router.asPath === path ||
+						(router.asPath === "/" && path === "/home")
+							? " underline"
+							: "")
+					}
+				>
+					{name}
+				</h2>
+			</Link>
+		);
+	};
 
 	return (
 		<div className="flex flex-row w-[97%] items-center mb-5">
