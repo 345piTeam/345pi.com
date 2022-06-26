@@ -1,7 +1,7 @@
 {
 	"name": "345pi",
 	"version": "0.1.0",
-	"private": true,
+	"private": false,
 	"scripts": {
 		"dev": "node dev.js",
 		"build": "next build",
