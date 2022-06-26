@@ -30,7 +30,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="flex flex-row w-screen items-center mb-5 pr-0 sm:pr-10 bg-white z-10 h-24 shadow-md">
+		<nav className="flex flex-row w-screen items-center mb-5 pr-0 sm:pr-10 bg-white dark:bg-transparent z-10 h-24 shadow-md">
 			<Link href="/">
 				<a>
 					<div className="scale-75 -translate-x-8 cursor-pointer hidden lg:block">
@@ -50,7 +50,7 @@ export default function Navbar() {
 				)}
 			</div>
 			<div
-				className="flex flex-col sm:flex-row gap-0 h-screen w-screen sm:w-auto sm:h-24 absolute sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white sm:bg-transparent shadow-md sm:shadow-none"
+				className="flex flex-col sm:flex-row gap-0 h-screen w-screen sm:w-auto sm:h-24 absolute sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white dark:bg-gray-900 sm:bg-transparent shadow-md sm:shadow-none"
 				ref={menuRef}
 			>
 				{navItems.map(({ name, path }, i) => (
