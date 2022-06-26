@@ -4,7 +4,7 @@ const path = require("path");
 const { result } = concurrently(
 	[
 		{
-			command: "sanity start",
+			command: "yarn sanity start",
 			name: "Sanity Studio server",
 			cwd: path.resolve(__dirname, "sanity"),
 		},
