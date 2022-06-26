@@ -19,7 +19,6 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 					content="Information site for the 345pi.us web3 application"
 				/>
 			</Head>
-
 			<main>
 				<div className="flex justify-center">
 					<TitleHexagon />
