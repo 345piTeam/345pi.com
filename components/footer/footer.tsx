@@ -28,7 +28,7 @@ const Footer = () => {
 		);
 
 	return (
-		<div className="flex flex-col gap-6 mt-20 justify-center h-32 pb-1 items-center bg-gray-100 dark:bg-gray-800/75">
+		<div className="flex flex-col gap-6 mt-20 justify-center h-32 pb-4 items-center bg-gray-100 dark:bg-gray-800/75">
 			<div className="flex flex-row"></div>
 			<div className="flex flex-row gap-6">
 				{socialLinks.map((link, i) => (

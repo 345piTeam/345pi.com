@@ -2,6 +2,7 @@ import { DarkLord } from "../../typings";
 import { urlFor } from "../../sanity";
 import Image from "next/image";
 import placeholderAvatar from "/public/placeholder-avatar.png";
+import PortableText from "react-portable-text";
 
 interface Props {
 	data: DarkLord;
@@ -29,6 +30,9 @@ const TeamMember: React.FC<Props> = ({ data }) => {
 				)}
 			</div>
 			<h1 className="font-bold text-center">{data.name}</h1>
+			<div className="max-w-sm font-[100]">
+				<PortableText content={data.bio !== null ? data.bio : []} />
+			</div>
 		</div>
 	);
 };

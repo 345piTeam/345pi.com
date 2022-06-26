@@ -17,7 +17,7 @@ const About: React.FC<Props> = ({ data }) => {
 			<div className="w-full flex justify-center text-4xl">
 				<h1>Our Team</h1>
 			</div>
-			<div className="m-6 flex flex-row justify-center flex-wrap gap-y-4">
+			<div className="m-6 flex flex-row justify-center flex-wrap gap-y-4 gap-x-12 xl:gap-x-0">
 				{data.map((darkLord, i) => (
 					<TeamMember key={i} data={darkLord} />
 				))}
@@ -30,6 +30,7 @@ export const getStaticProps = async () => {
 	const query = `*[_type == "darkLord"] {
 		name,
 		image,
+		bio,
 	}`;
 
 	const data = await sanityClient.fetch(query);

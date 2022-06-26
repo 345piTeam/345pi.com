@@ -42,4 +42,5 @@ export interface DarkLord {
 			_ref: string;
 		};
 	};
+	bio: object[];
 }
