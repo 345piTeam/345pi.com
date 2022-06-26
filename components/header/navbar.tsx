@@ -10,22 +10,16 @@ export default function Navbar() {
 	const { resolvedTheme } = useTheme();
 
 	return (
-		<div className="flex flex-row w-[96%] items-center mb-5">
+		<div className="flex flex-row w-[97%] items-center mb-5">
 			<Link href="/">
 				<a>
-					{resolvedTheme === "light" ? (
-						<Image
-							className="scale-75 -translate-x-8 cursor-pointer"
-							alt="345pi Logo"
-							src={pi345_logo}
-						/>
-					) : (
-						<Image
-							className="scale-75 -translate-x-8 cursor-pointer"
-							alt="345pi Logo"
-							src={pi345_logo_dark}
-						/>
-					)}
+					<div className="scale-75 -translate-x-8 cursor-pointer hidden lg:block">
+						{resolvedTheme === "light" ? (
+							<Image alt="345pi Logo" src={pi345_logo} />
+						) : (
+							<Image alt="345pi Logo" src={pi345_logo_dark} />
+						)}
+					</div>
 				</a>
 			</Link>
 			<div className="flex flex-row justify-between w-fit grow text-center align-middle cursor-pointer">

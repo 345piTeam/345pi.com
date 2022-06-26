@@ -17,16 +17,20 @@ const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 					<div
 						key={index}
 						className={
-							"flex justify-evenly items-center " +
-							(index % 2 === 0 ? "flex-row" : "flex-row-reverse")
+							"flex justify-evenly items-center -gap-6 lg:gap-0 text-center " +
+							(index % 2 === 0
+								? "lg:flex-row flex-col lg:text-left"
+								: "lg:flex-row-reverse flex-col lg:text-right")
 						}
 					>
-						<Image
-							alt="Image"
-							src={urlFor(cell.mainImage.asset).url()}
-							width="400"
-							height="400"
-						/>
+						<div className="relative h-64 w-64 lg:w-[400px] lg:h-[400px]">
+							<Image
+								alt="Image"
+								src={urlFor(cell.mainImage.asset).url()}
+								layout={"fill"}
+								objectFit={"cover"}
+							/>
+						</div>
 						<div className="flex flex-col gap-6 p-5 max-w-prose">
 							<h1 className="font-bold text-6xl">{cell.title}</h1>
 							<PortableText className="text-2xl" content={cell.body} />

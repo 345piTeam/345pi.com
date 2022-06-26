@@ -6,8 +6,9 @@ const Whitepaper = () => {
 			<Head>
 				<title>345pi - whitepaper</title>
 			</Head>
-			<div className="w-screen flex justify-center text-4xl">
-				<h1>Whitepaper</h1>
+			<div className="w-screen flex flex-col items-center gap-6">
+				<h1 className="text-4xl">Whitepaper</h1>
+				<p>Currently work in progress. Please check back later.</p>
 			</div>
 		</>
 	);
