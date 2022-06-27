@@ -18,7 +18,7 @@ const navItems = [
 export default function Navbar() {
 	const { resolvedTheme } = useTheme();
 	const menuRef = useRef<HTMLDivElement>(null);
-	const [closeBurger, setCloseBurger] = useState(true);
+	const [closeBurger, setCloseBurger] = useState(false);
 	const router = useRouter();
 
 	const toggleMenu = () => {
@@ -44,9 +44,9 @@ export default function Navbar() {
 			</Link>
 			<div className="cursor-pointer text-2xl ml-6 block sm:hidden my-10 z-50">
 				{closeBurger ? (
-					<FaBars onClick={() => toggleMenu()} />
-				) : (
 					<FaTimes onClick={() => toggleMenu()} />
+				) : (
+					<FaBars onClick={() => toggleMenu()} />
 				)}
 			</div>
 			<div
