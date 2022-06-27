@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from "react";
 import { HomepageInformation } from "../../typings";
 import { urlFor } from "../../sanity";
@@ -11,7 +10,7 @@ interface Props {
 
 const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 	return (
-		<div className="flex flex-col my-24">
+		<div className="flex flex-col my-20">
 			{info.map((cell, index) => {
 				return (
 					<div

@@ -20,7 +20,7 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 				/>
 			</Head>
 			<main>
-				<div className="flex justify-center">
+				<div className="flex justify-center items-center">
 					<TitleHexagon />
 				</div>
 				<HomescreenInfo info={info} />
