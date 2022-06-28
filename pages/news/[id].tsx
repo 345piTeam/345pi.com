@@ -36,7 +36,7 @@ const SinglePost: React.FC<Props> = ({ post }) => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="px-8 sm:px-24 w-full lg:w-[65%] text-center md:text-left text-xl">
+				<div className="px-8 sm:px-24 w-full lg:w-[65%] text-left text-xl">
 					<PortableText content={post.body} serializers={serializers} />
 				</div>
 			</main>
