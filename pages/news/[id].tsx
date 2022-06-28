@@ -5,6 +5,14 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 import PortableText from "react-portable-text";
 
+const serializers = {
+	normal: ({ children }: any) => {
+		if (children.length === 1 && children[0] === "") {
+			return <br />;
+		}
+		return <p style={{ fontFamily: "Sans-Serif" }}>{children}</p>;
+	},
+};
 interface Props {
 	post: Post;
 }
@@ -20,7 +28,7 @@ const SinglePost: React.FC<Props> = ({ post }) => {
 
 			<main className="flex flex-col items-center">
 				<h1 className="text-4xl text-center">{post.title}</h1>
-				<div className="relative h-48 w-[15em] m-4">
+				<div className="relative h-48 w-[15em] lg:w-[50%] m-4">
 					<Image
 						alt="post main image"
 						src={urlFor(post.mainImage.asset).url()}
@@ -28,15 +36,8 @@ const SinglePost: React.FC<Props> = ({ post }) => {
 						objectFit="cover"
 					/>
 				</div>
-				<div className="px-8 sm:px-24 w-full lg:w-[65%] text-center md:text-left font-xl">
-					<PortableText
-						className="text-xl"
-						content={post.body}
-						serializers={{
-							hardBreak: false,
-							normal: (props: any) => <p {...props} />,
-						}}
-					/>
+				<div className="px-8 sm:px-24 w-full lg:w-[65%] text-center md:text-left text-xl">
+					<PortableText content={post.body} serializers={serializers} />
 				</div>
 			</main>
 		</div>
