@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/header/navbar";
+import ScrollToTop from "../components/miscellaneous/ScrollToTop";
 
 export function DefaultLayout({ children }: { children: ReactElement }) {
 	return (
@@ -8,6 +9,7 @@ export function DefaultLayout({ children }: { children: ReactElement }) {
 			<Navbar />
 			<main className="grow">{children}</main>
 			<Footer />
+			<ScrollToTop />
 		</div>
 	);
 }
