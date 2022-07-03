@@ -71,7 +71,7 @@ export default function Navbar() {
 				))}
 			</div>
 			<a href="https://345pi.us/" target="_blank" rel="noreferrer">
-				<div className="absolute right-6 top-6 sm:relative sm:right-0 sm:top-0 flex justify-center items-center cursor-pointer bg-green-600 hover:bg-green-700 px-8 h-12 rounded-full">
+				<div className="absolute right-6 top-6 sm:relative sm:right-0 sm:top-0 flex justify-center items-center cursor-pointer bg-main-500 hover:bg-main-400 px-8 h-12 rounded-full">
 					<h2 className="text-white text-md lg:text-lg">Launch App</h2>
 				</div>
 			</a>
