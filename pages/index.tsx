@@ -2,6 +2,7 @@ import Head from "next/head";
 import { FunctionComponent } from "react";
 import TitleHexagon from "../components/homepage/hexagon";
 import HomescreenInfo from "../components/homepage/homescreenInformation";
+import NetworkVideo from "../components/homepage/networkVideo";
 import { sanityClient } from "../sanity";
 import { HomepageInformation } from "../typings";
 
@@ -20,8 +21,10 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 				/>
 			</Head>
 			<main>
-				<div className="flex justify-center items-center">
+				<div className="flex flex-row justify-evenly gap-0 items-top">
+					<NetworkVideo />
 					<TitleHexagon />
+					<NetworkVideo flipped={true} />
 				</div>
 				<HomescreenInfo info={info} />
 			</main>

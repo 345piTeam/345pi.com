@@ -10,7 +10,7 @@ interface Props {
 
 const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
 	return (
-		<div className="flex flex-col my-20">
+		<div className="flex flex-col">
 			{info.map((cell, index) => {
 				return (
 					<div
