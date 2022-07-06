@@ -55,18 +55,20 @@ export default function Navbar() {
 			>
 				{navItems.map(({ name, path }, i) => (
 					<Link href={path} key={i}>
-						<h2
-							onClick={() => toggleMenu()}
-							className={
-								"text-2xl grow-0 sm:grow hover:underline transition-all duration-200 ease-in-out underline-offset-8 leading-[5] uppercase" +
-								(router.asPath === path ||
-								(router.asPath === "/" && path === "/home")
-									? " underline"
-									: "")
-							}
-						>
-							{name}
-						</h2>
+						<a className="grow-0 sm:grow">
+							<h2
+								onClick={() => toggleMenu()}
+								className={
+									"text-2xl hover:underline underline-offset-8 leading-[5] uppercase h-full" +
+									(router.asPath === path ||
+									(router.asPath === "/" && path === "/home")
+										? " underline"
+										: "")
+								}
+							>
+								{name}
+							</h2>
+						</a>
 					</Link>
 				))}
 			</div>
