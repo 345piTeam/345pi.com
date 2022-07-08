@@ -9,7 +9,6 @@ interface Props {
 }
 
 const TeamMember: React.FC<Props> = ({ data }) => {
-	const imageSize = 250;
 	return (
 		<div className="flex flex-col items-center basis-1/3">
 			<div className="relative w-64 h-64 rounded-full overflow-hidden">
