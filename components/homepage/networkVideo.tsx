@@ -4,7 +4,12 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useRef } from "react";
 
-const NetworkVideo = ({ flipped }: { flipped?: boolean }) => {
+interface Props {
+	className?: string;
+	flipped?: boolean;
+}
+
+const NetworkVideo: React.FC<Props> = ({ flipped, className }) => {
 	const { resolvedTheme } = useTheme();
 	const ref = useRef<HTMLDivElement>(null);
 	useEffect(() => {
@@ -13,7 +18,7 @@ const NetworkVideo = ({ flipped }: { flipped?: boolean }) => {
 		}
 	}, [flipped]);
 	return (
-		<div className="max-w-[450px] opacity-20 hidden lg:block" ref={ref}>
+		<div ref={ref} className={className}>
 			{resolvedTheme === "light" ? (
 				<Image src={videoLight} alt="" />
 			) : (
