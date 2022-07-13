@@ -30,7 +30,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="flex flex-row w-screen items-center mb-5 pr-0 sm:pr-10 bg-white z-10 h-24 shadow-md">
+		<nav className="flex flex-row w-screen items-center mb-5 pr-0 sm:pr-10 bg-white dark:bg-transparent z-10 h-24 shadow-md">
 			<Link href="/">
 				<a>
 					<div className="scale-75 -translate-x-8 cursor-pointer hidden lg:block">
