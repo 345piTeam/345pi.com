@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from "react";
 import { HomepageInformation } from "../../typings";
 import { urlFor } from "../../sanity";
@@ -7,11 +6,12 @@ import PortableText from "react-portable-text";
 
 interface Props {
 	info: HomepageInformation[];
+	myRef: any;
 }
 
-const HomescreenInfo: FunctionComponent<Props> = ({ info }) => {
+const HomescreenInfo: FunctionComponent<Props> = ({ info, myRef }) => {
 	return (
-		<div className="flex flex-col my-24">
+		<div className="flex flex-col" ref={myRef}>
 			{info.map((cell, index) => {
 				return (
 					<div

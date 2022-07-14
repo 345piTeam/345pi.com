@@ -1,7 +1,9 @@
 import Head from "next/head";
-import { FunctionComponent } from "react";
+import React from "react";
+import { FunctionComponent, useEffect, useRef } from "react";
 import TitleHexagon from "../components/homepage/hexagon";
 import HomescreenInfo from "../components/homepage/homescreenInformation";
+import NetworkVideo from "../components/homepage/networkVideo";
 import { sanityClient } from "../sanity";
 import { HomepageInformation } from "../typings";
 
@@ -10,6 +12,8 @@ interface Props {
 }
 
 const Home: FunctionComponent<Props> = ({ info }) => {
+	const contentRef = React.createRef();
+
 	return (
 		<div>
 			<Head>
@@ -20,10 +24,15 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 				/>
 			</Head>
 			<main>
-				<div className="flex justify-center">
-					<TitleHexagon />
+				<div className="flex flex-row justify-evenly gap-0 items-top">
+					<NetworkVideo className="max-w-[450px] opacity-20 hidden lg:block" />
+					<TitleHexagon contentRef={contentRef} />
+					<NetworkVideo
+						className="max-w-[450px] opacity-20 hidden lg:block"
+						flipped={true}
+					/>
 				</div>
-				<HomescreenInfo info={info} />
+				<HomescreenInfo info={info} myRef={contentRef} />
 			</main>
 		</div>
 	);
@@ -49,7 +58,7 @@ export const getStaticProps = async () => {
 		props: {
 			info,
 		},
-		revalidate: 60,
+		revalidate: 300,
 	};
 };
 

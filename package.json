@@ -1,5 +1,5 @@
 {
-	"name": "345pi",
+	"name": "345pi.com",
 	"version": "0.1.0",
 	"private": false,
 	"scripts": {
@@ -19,7 +19,7 @@
 		"@tailwindcss/forms": "^0.5.2",
 		"@tailwindcss/line-clamp": "^0.4.0",
 		"next": "^12.1.0",
-		"next-sanity": "^0.5.2",
+		"next-sanity": "^0.6.0",
 		"next-sanity-image": "^3.2.1",
 		"next-themes": "^0.2.0",
 		"react": "^18.1.0",
@@ -32,11 +32,11 @@
 	"devDependencies": {
 		"@types/node": "^18.0.0",
 		"@types/react": "^18.0.0",
-		"@types/react-dom": "18.0.5",
+		"@types/react-dom": "^18.0.5",
 		"autoprefixer": "^10.4.7",
 		"concurrently": "^7.2.2",
 		"eslint": "^8.16.0",
-		"eslint-config-next": "12.1.6",
+		"eslint-config-next": "^12.1.6",
 		"glob-parent": "^6.0.2",
 		"nth-check": "^2.1.1",
 		"postcss": "^8.4.14",
