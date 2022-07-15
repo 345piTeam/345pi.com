@@ -18,7 +18,7 @@ const navItems = [
 export default function Navbar() {
 	const { resolvedTheme } = useTheme();
 	const menuRef = useRef<HTMLDivElement>(null);
-	const [closeBurger, setCloseBurger] = useState(true);
+	const [closeBurger, setCloseBurger] = useState(false);
 	const router = useRouter();
 
 	const toggleMenu = () => {

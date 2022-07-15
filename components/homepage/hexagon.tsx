@@ -15,22 +15,21 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 
 	return (
 		<div className="relative text-white text-center items-center">
-			<div className="lg:min-w-[550px]">
+			<div className="lg:min-w-[550px] relative w-[90vw] md:w-[550px] h-[30em] md:h-[600px]">
 				<Image
 					alt="Title background image"
 					src={hexagon}
-					width={550}
-					height={600}
+					layout={"fill"}
 					priority
 				/>
 			</div>
-			<div className="absolute top-28 sm:top-32 [&>*]:left-[50%] [&>*]-translate-x-[50%] w-[100%] flex flex-col justify-between items-center h-64 px-2 sm:h-[400px]">
-				<h1 className="w-[100%] text-5xl sm:text-6xl">
+			<div className="absolute top-32 [&>*]:left-[50%] [&>*]-translate-x-[50%] w-[100%] flex flex-col justify-between items-center h-64 px-1 md:h-[400px]">
+				<h1 className="w-[100%] text-4xl md:text-6xl">
 					Learn Calculus.
 					<br />
 					Make a Friend.
 				</h1>
-				<h2 className="font-[100] text-2xl sm:text-3xl max-w-md">
+				<h2 className="font-[100] text-2xl md:text-3xl max-w-md">
 					Complete calculus games to earn cryptocurrency
 				</h2>
 				<button

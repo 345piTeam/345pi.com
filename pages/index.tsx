@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { FunctionComponent, useEffect, useRef } from "react";
+import { FunctionComponent } from "react";
 import TitleHexagon from "../components/homepage/hexagon";
 import HomescreenInfo from "../components/homepage/homescreenInformation";
 import NetworkVideo from "../components/homepage/networkVideo";
@@ -25,10 +25,10 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 			</Head>
 			<main>
 				<div className="flex flex-row justify-evenly gap-0 items-top">
-					<NetworkVideo className="max-w-[450px] opacity-20 hidden lg:block" />
+					<NetworkVideo className="max-w-[450px] opacity-50 hidden lg:block" />
 					<TitleHexagon contentRef={contentRef} />
 					<NetworkVideo
-						className="max-w-[450px] opacity-20 hidden lg:block"
+						className="max-w-[450px] opacity-50 hidden lg:block"
 						flipped={true}
 					/>
 				</div>
