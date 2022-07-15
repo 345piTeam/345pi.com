@@ -50,7 +50,7 @@ export default function Navbar() {
 				)}
 			</div>
 			<div
-				className="flex flex-col sm:flex-row gap-0 h-screen w-screen sm:w-auto sm:h-24 absolute sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white dark:bg-gray-900 sm:bg-transparent shadow-md sm:shadow-none"
+				className="flex flex-col sm:flex-row gap-0 h-screen sm:w-auto sm:h-24 absolute sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white dark:bg-gray-900 sm:bg-transparent shadow-md sm:shadow-none"
 				ref={menuRef}
 			>
 				{navItems.map(({ name, path }, i) => (

@@ -44,3 +44,8 @@ export interface DarkLord {
 	};
 	bio: object[];
 }
+
+export interface Whitepaper {
+	title: string;
+	body: object[];
+}
