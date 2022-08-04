@@ -13,6 +13,9 @@ const reducers = combineReducers({
 const persistConfig = {
 	key: "root",
 	storage: storage,
+	...(process.env.NODE_ENV === "development" && {
+		blacklist: ["wallet"],
+	}),
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

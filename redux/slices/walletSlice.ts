@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Signer } from "ethers";
 
 interface WalletData {
 	address: string;
@@ -13,12 +12,12 @@ const walletSlice = createSlice({
 	name: "wallet",
 	initialState,
 	reducers: {
-		setWallet: (state, { payload }) => {
+		setAddress: (state, { payload }) => {
 			state.address = payload;
 		},
 	},
 });
 
-export const { setWallet } = walletSlice.actions;
+export const { setAddress } = walletSlice.actions;
 
 export default walletSlice.reducer;

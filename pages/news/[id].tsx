@@ -10,7 +10,17 @@ const serializers = {
 		if (children.length === 1 && children[0] === "") {
 			return <br />;
 		}
-		return <p style={{ fontFamily: "Sans-Serif" }}>{children}</p>;
+		return (
+			<p
+				style={{
+					fontFamily:
+						"charter, Georgia, Cambria, 'Times New Roman', Times, serif",
+				}}
+				className="dark:font-thin"
+			>
+				{children}
+			</p>
+		);
 	},
 };
 interface Props {

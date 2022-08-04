@@ -9,7 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ethers } from "ethers";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { setWallet } from "../../redux/slices/walletSlice";
+import ConnectWallet from "./walletConnection";
 
 interface Window {
 	ethereum?: import("ethers").providers.ExternalProvider;
@@ -24,18 +24,11 @@ const navItems = [
 	{ name: "news", path: "/news" },
 ];
 
-export const getShortAddress = (address: string) => {
-	const length = address.length;
-	return address.slice(0, 5) + "..." + address.slice(length - 4, length);
-};
-
 export default function Navbar() {
 	const { resolvedTheme } = useTheme();
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [closeBurger, setCloseBurger] = useState(false);
 	const router = useRouter();
-	const dispatch = useAppDispatch();
-	const { address } = useAppSelector((state) => state.wallet);
 
 	const toggleMenu = () => {
 		if (menuRef && menuRef.current) {
@@ -43,32 +36,6 @@ export default function Navbar() {
 			menuRef.current.classList.toggle("translate-y-[50%]");
 		}
 		setCloseBurger((prev) => !prev);
-	};
-
-	useEffect(() => {
-		if (address) {
-			connectWallet();
-		}
-		// Ensure function only runs once
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	const connectWallet = async () => {
-		if (window.ethereum) {
-			// A Web3Provider wraps a standard Web3 provider, which is
-			// what MetaMask injects as window.ethereum into each page
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-			// MetaMask requires requesting permission to connect users accounts
-			await provider.send("eth_requestAccounts", []);
-
-			// The MetaMask plugin also allows signing transactions to
-			// send ether and pay to change state within the blockchain.
-			// For this, you need the account signer...
-			const signer = provider.getSigner();
-			const address = await signer.getAddress();
-			dispatch(setWallet(address));
-		}
 	};
 
 	return (
@@ -114,14 +81,7 @@ export default function Navbar() {
 					</Link>
 				))}
 			</div>
-			<div
-				className="absolute right-6 top-6 sm:relative sm:right-0 sm:top-0 flex justify-center items-center cursor-pointer bg-blue-500 hover:bg-blue-400 px-8 h-12 rounded-full"
-				onClick={connectWallet}
-			>
-				<h2 className="text-white text-md lg:text-lg">
-					{address ? getShortAddress(address) : "Connect Wallet"}
-				</h2>
-			</div>
+			<ConnectWallet />
 			<ThemeToggle />
 		</nav>
 	);

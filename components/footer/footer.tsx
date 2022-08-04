@@ -36,7 +36,7 @@ const Footer = () => {
 				))}
 			</div>
 			<div>
-				<p>© 2022 345pi.com. All rights reserved.</p>
+				<p>© 2022 345pi.net. All rights reserved.</p>
 			</div>
 		</footer>
 	);
