@@ -5,8 +5,17 @@ import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./themeToggle";
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { ethers } from "ethers";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
+import ConnectWallet from "./walletConnection";
+
+interface Window {
+	ethereum?: import("ethers").providers.ExternalProvider;
+}
+
+declare let window: Window;
 
 const navItems = [
 	{ name: "home", path: "/" },
@@ -72,11 +81,7 @@ export default function Navbar() {
 					</Link>
 				))}
 			</div>
-			<a href="https://345pi.us/" target="_blank" rel="noreferrer">
-				<div className="absolute right-6 top-6 sm:relative sm:right-0 sm:top-0 flex justify-center items-center cursor-pointer bg-main-500 hover:bg-main-400 px-8 h-12 rounded-full">
-					<h2 className="text-white text-md lg:text-lg">Launch App</h2>
-				</div>
-			</a>
+			<ConnectWallet />
 			<ThemeToggle />
 		</nav>
 	);

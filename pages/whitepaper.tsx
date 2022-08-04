@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import PortableText from "react-portable-text";
 import { sanityClient } from "../sanity";
@@ -10,7 +10,15 @@ const serializers = {
 			return <br />;
 		}
 		return (
-			<p style={{ fontFamily: "Sans-Serif", fontSize: "18px" }}>{children}</p>
+			<p
+				style={{
+					fontFamily:
+						"charter, Georgia, Cambria, 'Times New Roman', Times, serif",
+					fontSize: "18px",
+				}}
+			>
+				{children}
+			</p>
 		);
 	},
 	h1: ({ children }: any) => {
