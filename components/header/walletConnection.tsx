@@ -5,8 +5,12 @@ import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { setAddress } from "../../redux/slices/walletSlice";
 
 export const getShortAddress = (address: string) => {
-	const length = address.length;
-	return address.slice(0, 5) + "..." + address.slice(length - 4, length);
+	if (address.length === 42 && address.slice(0, 2) === "0x") {
+		const length = address.length;
+		return address.slice(0, 5) + "..." + address.slice(length - 4, length);
+	} else {
+		return address;
+	}
 };
 
 const ConnectWallet = () => {
@@ -30,26 +34,22 @@ const ConnectWallet = () => {
 				cacheProvider: true, // optional
 				providerOptions, // required
 			});
-
 			const instance = await web3Modal.connect();
-
 			const provider = new ethers.providers.Web3Provider(instance);
-
-			subscribeToEvents(provider);
-
+			// subscribeToEvents(provider);
 			const signer = provider.getSigner();
 			const newAddress = await signer.getAddress();
-			dispatch(setAddress(newAddress));
+			console.log(newAddress);
+			const ensName = await provider.lookupAddress(newAddress);
+			if (ensName) {
+				console.log(ensName);
+				dispatch(setAddress(ensName));
+			} else {
+				dispatch(setAddress(newAddress));
+			}
 		} else {
 			dispatch(setAddress(""));
 		}
-	};
-
-	const subscribeToEvents = (provider: ethers.providers.Web3Provider) => {
-		// Subscribe to provider disconnection
-		provider.on("disconnect", (error: { code: number; message: string }) => {
-			console.log(error);
-		});
 	};
 
 	return (
