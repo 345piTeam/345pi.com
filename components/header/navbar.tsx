@@ -5,17 +5,9 @@ import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./themeToggle";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { ethers } from "ethers";
-import { useAppDispatch, useAppSelector } from "../../redux/store";
 import ConnectWallet from "./walletConnection";
-
-interface Window {
-	ethereum?: import("ethers").providers.ExternalProvider;
-}
-
-declare let window: Window;
 
 const navItems = [
 	{ name: "home", path: "/" },
