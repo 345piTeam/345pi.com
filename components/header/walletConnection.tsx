@@ -39,10 +39,8 @@ const ConnectWallet = () => {
 			// subscribeToEvents(provider);
 			const signer = provider.getSigner();
 			const newAddress = await signer.getAddress();
-			console.log(newAddress);
 			const ensName = await provider.lookupAddress(newAddress);
 			if (ensName) {
-				console.log(ensName);
 				dispatch(setAddress(ensName));
 			} else {
 				dispatch(setAddress(newAddress));
