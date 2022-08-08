@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { stringify } from "querystring";
 import PortableText from "react-portable-text";
 import { sanityClient } from "../sanity";
 import { Whitepaper } from "../typings";
@@ -23,7 +24,7 @@ const serializers = {
 	},
 	h1: ({ children }: any) => {
 		return (
-			<h1 className="text-2xl lg:text-5xl font-bold underline underline-offset-4 pt-8 pb-4">
+			<h1 className="text-2xl lg:text-5xl font-bold underline underline-offset-[.5rem] font-variant-small font-serif py-8">
 				{children}
 			</h1>
 		);
@@ -37,7 +38,6 @@ const serializers = {
 		return <h3 className="lg:text-xl font-bold pt-2">{children}</h3>;
 	},
 	link: (props: any) => {
-		console.log(props);
 		return (
 			<a
 				className="text-blue-600 dark:text-blue-300 underline"
