@@ -36,6 +36,19 @@ const serializers = {
 	h3: ({ children }: any) => {
 		return <h3 className="lg:text-xl font-bold pt-2">{children}</h3>;
 	},
+	link: (props: any) => {
+		console.log(props);
+		return (
+			<a
+				className="text-blue-600 dark:text-blue-300 underline"
+				href={props.href}
+				target="_blank"
+				rel="noreferrer"
+			>
+				{props.children}
+			</a>
+		);
+	},
 };
 
 const WhitepaperPage = ({ whitepaper }: { whitepaper: Whitepaper }) => {
