@@ -2,20 +2,20 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { setAddress, toggleModal } from "../../redux/slices/walletSlice";
+import {
+	setAddress,
+	setEnsName,
+	toggleModal,
+} from "../../redux/slices/walletSlice";
 
 export const getShortAddress = (address: string) => {
-	if (address.length === 42 && address.slice(0, 2) === "0x") {
-		const length = address.length;
-		return address.slice(0, 5) + "..." + address.slice(length - 4, length);
-	} else {
-		return address;
-	}
+	const length = address.length;
+	return address.slice(0, 5) + "..." + address.slice(length - 4, length);
 };
 
 const ConnectWallet = () => {
 	const dispatch = useAppDispatch();
-	const { address } = useAppSelector((state) => state.wallet);
+	const { address, ensName } = useAppSelector((state) => state.wallet);
 
 	const toggleWallet = async () => {
 		if (address === "") {
@@ -41,10 +41,9 @@ const ConnectWallet = () => {
 			const newAddress = await signer.getAddress();
 			const ensName = await provider.lookupAddress(newAddress);
 			if (ensName) {
-				dispatch(setAddress(ensName));
-			} else {
-				dispatch(setAddress(newAddress));
+				dispatch(setEnsName(ensName));
 			}
+			dispatch(setAddress(newAddress));
 		} else {
 			dispatch(toggleModal());
 		}
@@ -56,7 +55,9 @@ const ConnectWallet = () => {
 			onClick={toggleWallet}
 		>
 			<h2 className="text-white text-md lg:text-lg">
-				{address !== "" ? getShortAddress(address) + "" : "Connect Wallet"}
+				{address !== ""
+					? (ensName !== "" ? ensName : getShortAddress(address)) + ""
+					: "Connect Wallet"}
 			</h2>
 		</div>
 	);

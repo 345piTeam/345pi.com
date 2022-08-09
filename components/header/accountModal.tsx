@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AiOutlineClose, AiOutlineCopy } from "react-icons/ai";
 import { setAddress, toggleModal } from "../../redux/slices/walletSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
@@ -7,9 +7,11 @@ import { getShortAddress } from "./walletConnection";
 export const etherscanURL = "https://etherscan.io/address/";
 
 const AccountModal = () => {
-	const dispatch = useAppDispatch();
 	const backgroundRef = useRef<HTMLDivElement>(null);
-	const { address } = useAppSelector((state) => state.wallet);
+	const imageRef = useRef<HTMLDivElement>(null);
+	const dispatch = useAppDispatch();
+	const { address, ensName } = useAppSelector((state) => state.wallet);
+
 	return (
 		<div
 			className="fixed top-0 bottom-0 left-0 right-0 bg-black/25 flex flex-row justify-center"
@@ -29,7 +31,8 @@ const AccountModal = () => {
 				</div>
 				<div className="border-gray-100 border-2 h-20 m-4 p-2 rounded-lg flex flex-col justify-between">
 					<div className="flex flex-row">
-						<p>{getShortAddress(address)}</p>
+						<div ref={imageRef}></div>
+						<p>{ensName !== "" ? ensName : getShortAddress(address)}</p>
 						<AiOutlineCopy className="text-xl cursor-pointer text-blue-600" />
 					</div>
 					<a
