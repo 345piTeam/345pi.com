@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ConnectWallet from "./walletConnection";
+import AccountModal from "./accountModal";
+import { useAppSelector } from "../../redux/store";
 
 const navItems = [
 	{ name: "home", path: "/" },
@@ -21,6 +23,7 @@ export default function Navbar() {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [closeBurger, setCloseBurger] = useState(false);
 	const router = useRouter();
+	const { accountModal } = useAppSelector((state) => state.wallet);
 
 	const toggleMenu = () => {
 		if (menuRef && menuRef.current) {
@@ -75,6 +78,7 @@ export default function Navbar() {
 			</div>
 			<ConnectWallet />
 			<ThemeToggle />
+			{accountModal && <AccountModal />}
 		</nav>
 	);
 }
