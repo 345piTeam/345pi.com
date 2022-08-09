@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
-import { setAddress } from "../../redux/slices/walletSlice";
+import { setAddress, toggleModal } from "../../redux/slices/walletSlice";
 
 export const getShortAddress = (address: string) => {
 	if (address.length === 42 && address.slice(0, 2) === "0x") {
@@ -46,7 +46,7 @@ const ConnectWallet = () => {
 				dispatch(setAddress(newAddress));
 			}
 		} else {
-			dispatch(setAddress(""));
+			dispatch(toggleModal());
 		}
 	};
 
