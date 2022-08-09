@@ -13,6 +13,7 @@ import nftInformation from "./nftInformation";
 import darkLord from "./darkLord";
 import author from "./author";
 import whitepaper from "./whitepaper";
+import demo from "./demo";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,6 +32,7 @@ export default createSchema({
 		blockContent,
 		whitepaper,
 		nftInformation,
+		demo,
 		// When added to this list, object types can be used as
 		// { type: 'typename' } in other document schemas
 	]),
