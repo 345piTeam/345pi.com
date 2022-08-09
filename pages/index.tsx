@@ -5,13 +5,14 @@ import TitleHexagon from "../components/homepage/hexagon";
 import HomescreenInfo from "../components/homepage/homescreenInformation";
 import NetworkVideo from "../components/homepage/networkVideo";
 import { sanityClient } from "../sanity";
-import { HomepageInformation } from "../typings";
+import { HomepageInformation, NftInfo } from "../typings";
 
 interface Props {
 	info: HomepageInformation[];
+	nftInfo: NftInfo[];
 }
 
-const Home: FunctionComponent<Props> = ({ info }) => {
+const Home: FunctionComponent<Props> = ({ info, nftInfo }) => {
 	const contentRef = React.createRef();
 
 	return (
@@ -39,15 +40,23 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 };
 
 export const getStaticProps = async () => {
-	const query = `*[_type == "homepage-information"] | order(_createdAt asc) {
+	const query1 = `*[_type == "homepage-information"] | order(_createdAt asc) {
 		title,
 		body,
 		slug,
 		mainImage
 	  }`;
-	const info = await sanityClient.fetch(query);
+	const info = await sanityClient.fetch(query1);
 
-	if (!info) {
+	const query2 = `*[_type == "nft-information"] | order(_createdAt asc) {
+		title,
+		body,
+		slug,
+		mainImage
+	  }`;
+	const nftInfo = await sanityClient.fetch(query2);
+
+	if (!info || !nftInfo) {
 		// If there is a server error, you might want to
 		// throw an error instead of returning so that the cache is not updated
 		// until the next successful request.
@@ -57,6 +66,7 @@ export const getStaticProps = async () => {
 	return {
 		props: {
 			info,
+			nftInfo,
 		},
 		revalidate: 300,
 	};

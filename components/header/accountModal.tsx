@@ -22,7 +22,7 @@ const AccountModal = () => {
 			}}
 			ref={backgroundRef}
 		>
-			<div className="bg-white relative w-[25%] max-h-48 mt-36 p-3 rounded-sm flex flex-col text-black">
+			<div className="bg-white relative w-[80%] sm:w-[350px] max-h-48 mt-36 p-3 rounded-sm flex flex-col text-black">
 				<div className="flex flex-row justify-between">
 					<p>Account Information</p>
 					<button onClick={() => dispatch(toggleModal())}>

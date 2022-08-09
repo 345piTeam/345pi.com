@@ -1,6 +1,7 @@
 import Image from "next/image";
 import hexagon from "/public/Hexagon.svg";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import Link from "next/link";
 
 interface Props {
 	contentRef?: any;
@@ -39,6 +40,22 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 					<p>Learn More</p>
 					<AiOutlineArrowDown className="m-1" />
 				</button>
+			</div>
+			<div className="text-black dark:text-white text-xl absolute top-[450px] md:top-[550px] dark:bottom-[200px] flex flex-row justify-between w-full">
+				<Link href="/demo">
+					<div className="border-green-500 border-4 p-3 rounded-full cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out h-fit">
+						Try the Demo
+					</div>
+				</Link>
+				<a
+					href="https://discord.gg/3UwWPeqE3F"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<div className="border-green-500 border-4 p-3 rounded-full hover:scale-110 transition-all duration-200 ease-in-out">
+						Join Discord
+					</div>
+				</a>
 			</div>
 		</div>
 	);

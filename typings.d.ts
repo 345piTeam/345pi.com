@@ -31,6 +31,19 @@ export interface HomepageInformation {
 	body: object[];
 }
 
+export interface NftInfo {
+	slug: {
+		current: string;
+	};
+	title: string;
+	image: {
+		asset: {
+			_ref: string;
+		};
+	};
+	body: object[];
+}
+
 export interface DarkLord {
 	name: string;
 	userName: string;
