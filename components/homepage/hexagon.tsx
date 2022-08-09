@@ -43,7 +43,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 			</div>
 			<div className="text-black dark:text-white text-xl absolute top-[450px] md:top-[550px] dark:bottom-[200px] flex flex-row justify-between w-full">
 				<Link href="/demo">
-					<div className="border-green-500 border-4 p-3 rounded-full cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out h-fit">
+					<div className="border-green-500 border-4 p-3 rounded-full cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out h-fit transform-gpu">
 						Try the Demo
 					</div>
 				</Link>
@@ -52,7 +52,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					<div className="border-green-500 border-4 p-3 rounded-full hover:scale-110 transition-all duration-200 ease-in-out">
+					<div className="border-green-500 border-4 p-3 rounded-full hover:scale-110 transition-all duration-200 ease-in-out transform-gpu">
 						Join Discord
 					</div>
 				</a>
