@@ -8,7 +8,8 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import blockContent from "./blockContent";
 import category from "./category";
 import post from "./post";
-import information from "./information";
+import homepageInformation from "./homepageInformation";
+import nftInformation from "./nftInformation";
 import darkLord from "./darkLord";
 import author from "./author";
 import whitepaper from "./whitepaper";
@@ -26,9 +27,10 @@ export default createSchema({
 		darkLord,
 		author,
 		category,
-		information,
+		homepageInformation,
 		blockContent,
 		whitepaper,
+		nftInformation,
 		// When added to this list, object types can be used as
 		// { type: 'typename' } in other document schemas
 	]),
