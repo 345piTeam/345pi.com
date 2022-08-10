@@ -4,14 +4,16 @@ import { FunctionComponent } from "react";
 import TitleHexagon from "../components/homepage/hexagon";
 import HomescreenInfo from "../components/homepage/homescreenInformation";
 import NetworkVideo from "../components/homepage/networkVideo";
+import NftInformation from "../components/homepage/NftInformation";
 import { sanityClient } from "../sanity";
-import { HomepageInformation } from "../typings";
+import { HomepageInformation, NftData } from "../typings";
 
 interface Props {
 	info: HomepageInformation[];
+	nftData: NftData[];
 }
 
-const Home: FunctionComponent<Props> = ({ info }) => {
+const Home: FunctionComponent<Props> = ({ info, nftData }) => {
 	const contentRef = React.createRef();
 
 	return (
@@ -33,19 +35,33 @@ const Home: FunctionComponent<Props> = ({ info }) => {
 					/>
 				</div>
 				<HomescreenInfo info={info} myRef={contentRef} />
+				<div className="flex flex-row flex-wrap justify-center mt-6">
+					{nftData.map((d: NftData, i: number) => (
+						<NftInformation nftData={d} key={i} />
+					))}
+				</div>
 			</main>
 		</div>
 	);
 };
 
 export const getStaticProps = async () => {
-	const query = `*[_type == "homepage-information"] | order(_createdAt asc) {
+	const query1 = `*[_type == "homepage-information"] | order(_createdAt asc) {
 		title,
 		body,
 		slug,
 		mainImage
 	  }`;
-	const info = await sanityClient.fetch(query);
+	const info = await sanityClient.fetch(query1);
+
+	const query2 = `*[_type == "nft-information"] {
+		title,
+		body,
+		slug,
+		image
+	  }`;
+
+	const nftData = await sanityClient.fetch(query2);
 
 	if (!info) {
 		// If there is a server error, you might want to
@@ -57,6 +73,7 @@ export const getStaticProps = async () => {
 	return {
 		props: {
 			info,
+			nftData,
 		},
 		revalidate: 300,
 	};
