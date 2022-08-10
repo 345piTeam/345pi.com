@@ -10,7 +10,6 @@ import { HomepageInformation, NftData } from "../typings";
 
 interface Props {
 	info: HomepageInformation[];
-	nftInfo: NftInfo[];
 	nftData: NftData[];
 }
 
@@ -53,7 +52,7 @@ export const getStaticProps = async () => {
 		slug,
 		mainImage
 	  }`;
-	const nftInfo = await sanityClient.fetch(query21);
+	const info = await sanityClient.fetch(query1);
 
 	const query2 = `*[_type == "nft-information"] {
 		title,
@@ -64,7 +63,7 @@ export const getStaticProps = async () => {
 
 	const nftData = await sanityClient.fetch(query2);
 
-	if (!info || !nftInfo) {
+	if (!info || !nftData) {
 		// If there is a server error, you might want to
 		// throw an error instead of returning so that the cache is not updated
 		// until the next successful request.
