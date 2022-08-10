@@ -68,7 +68,7 @@ export const getStaticProps = async () => {
 
 	const nftData = await sanityClient.fetch(query2);
 
-	if (!info) {
+	if (!info || !nftData) {
 		// If there is a server error, you might want to
 		// throw an error instead of returning so that the cache is not updated
 		// until the next successful request.

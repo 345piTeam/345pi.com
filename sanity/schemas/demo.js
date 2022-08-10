@@ -1,11 +1,19 @@
 export default {
-	name: "nft-information",
-	title: "NFT Information",
+	name: "demo",
+	title: "Demo",
 	type: "document",
 	fields: [
 		{
+			name: "mainImage",
+			title: "Image",
+			type: "image",
+			options: {
+				hotspot: true,
+			},
+		},
+		{
 			name: "title",
-			title: "NFT Name",
+			title: "Image Name",
 			type: "string",
 		},
 		{
@@ -18,16 +26,8 @@ export default {
 			},
 		},
 		{
-			name: "image",
-			title: "Image",
-			type: "image",
-			options: {
-				hotspot: true,
-			},
-		},
-		{
 			name: "body",
-			title: "NFT Description",
+			title: "Description",
 			type: "blockContent",
 		},
 	],
