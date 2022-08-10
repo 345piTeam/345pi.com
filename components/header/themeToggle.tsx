@@ -17,7 +17,7 @@ const ThemeToggle = () => {
 			onClick={() => {
 				setTheme(theme === "light" ? "dark" : "light");
 			}}
-			className="fixed right-1 top-2 text-3xl leading-6"
+			className="fixed right-2 sm:right-4 xl:right-6 top-2 text-3xl leading-6"
 		>
 			{resolvedTheme === "light" ? (
 				<SunIcon className="h-6 w-6 hover:h-7 hover:w-7 transition-all duration-200 ease-in-out" />
