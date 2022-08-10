@@ -23,7 +23,7 @@ const serializers = {
 	},
 	h1: ({ children }: any) => {
 		return (
-			<h1 className="text-2xl lg:text-5xl font-bold underline underline-offset-4 pt-8 pb-4">
+			<h1 className="text-2xl lg:text-5xl font-bold underline underline-offset-4 pt-8 pb-4 font-variant-small">
 				{children}
 			</h1>
 		);

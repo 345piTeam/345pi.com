@@ -8,7 +8,7 @@ interface Props {
 }
 const NftInformation: React.FC<Props> = ({ nftData }) => {
 	return (
-		<div className="basis-1/3 flex flex-col items-center">
+		<div className="md:basis-1/3 flex flex-col items-center">
 			<div className="relative w-64 h-64">
 				<Image
 					alt="NFT Image"
@@ -18,7 +18,7 @@ const NftInformation: React.FC<Props> = ({ nftData }) => {
 				/>
 			</div>
 			<h3 className="font-bold text-xl">{nftData.title}</h3>
-			<PortableText content={nftData.body} className="mx-10 text-sm" />
+			<PortableText content={nftData.body} className="mx-6 text-sm" />
 		</div>
 	);
 };

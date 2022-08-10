@@ -35,6 +35,11 @@ const Home: FunctionComponent<Props> = ({ info, nftData }) => {
 					/>
 				</div>
 				<HomescreenInfo info={info} myRef={contentRef} />
+				<div className="flex flex-row w-full justify-center mt-5">
+					<h2 className="text-4xl md:text-6xl font-bold underline ">
+						NFT Information
+					</h2>
+				</div>
 				<div className="flex flex-row flex-wrap justify-center mt-6">
 					{nftData.map((d: NftData, i: number) => (
 						<NftInformation nftData={d} key={i} />

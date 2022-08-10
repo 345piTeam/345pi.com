@@ -13,8 +13,10 @@ class MyDocument extends Document {
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 				<body className="dark:bg-gray-900 dark:text-white">
-					<Main />
-					<NextScript />
+					<div className="overflow-x-hidden ">
+						<Main />
+						<NextScript />
+					</div>
 				</body>
 			</Html>
 		);
