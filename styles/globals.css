@@ -4,15 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-family: Poppins, system-ui, sans-serif;
-    box-sizing: border-box;
-  }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-}
 
 @layer utilities {
   .font-variant-small {

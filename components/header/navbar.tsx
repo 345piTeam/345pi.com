@@ -35,7 +35,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="flex flex-row w-full items-center mb-5 pr-0 sm:pr-10 bg-white dark:bg-transparent z-10 h-24 shadow-md dark:shadow-none relative">
+		<nav className="flex flex-row w-full items-center mb-5 pr-0 md:pr-10 bg-white dark:bg-transparent z-10 h-24 shadow-md dark:shadow-none relative">
 			<Link href="/">
 				<a>
 					<div className="scale-75 -translate-x-8 cursor-pointer hidden lg:block">
@@ -47,7 +47,7 @@ export default function Navbar() {
 					</div>
 				</a>
 			</Link>
-			<div className="cursor-pointer text-2xl ml-6 block sm:hidden my-10 z-50">
+			<div className="cursor-pointer text-2xl ml-6 block md:hidden my-10 z-50">
 				{closeBurger ? (
 					<FaTimes onClick={() => toggleMenu()} />
 				) : (
@@ -55,12 +55,12 @@ export default function Navbar() {
 				)}
 			</div>
 			<div
-				className="flex flex-col sm:flex-row gap-0 h-screen w-full sm:w-auto sm:h-24 fixed sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white dark:bg-gray-900 sm:bg-transparent shadow-md sm:shadow-none"
+				className="flex flex-col md:flex-row gap-0 h-screen w-full md:w-auto md:h-24 fixed md:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full md:-translate-y-2 bg-white dark:bg-gray-900 md:bg-transparent shadow-md md:shadow-none"
 				ref={menuRef}
 			>
 				{navItems.map(({ name, path }, i) => (
 					<Link href={path} key={i}>
-						<a className="grow-0 sm:grow">
+						<a className="grow-0 md:grow">
 							<h2
 								onClick={() => toggleMenu()}
 								className={

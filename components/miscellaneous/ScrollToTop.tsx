@@ -7,6 +7,7 @@ const ScrollToTop = () => {
 	const handleScroll = () => {
 		const position = window.pageYOffset;
 		setScrollPosition(position);
+		console.log(scrollPosition);
 	};
 
 	useEffect(() => {
@@ -31,7 +32,7 @@ const ScrollToTop = () => {
 			onClick={() => {
 				window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 			}}
-			className="fixed bottom-2 right-2 text-2xl md:text-4xl translate-y-16 duration-200 ease-linear"
+			className="fixed bottom-8 right-8 text-2xl md:text-4xl translate-y-16 duration-200 ease-linear"
 		>
 			<BsFillArrowUpCircleFill />
 		</button>

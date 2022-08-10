@@ -9,7 +9,7 @@ export function DefaultLayout({ children }: { children: ReactElement }) {
 			<Navbar />
 			<main className="grow">{children}</main>
 			<Footer />
-			<ScrollToTop />
+			{/* <ScrollToTop /> */}
 		</div>
 	);
 }
