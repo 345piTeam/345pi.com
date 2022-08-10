@@ -31,7 +31,7 @@ export interface HomepageInformation {
 	body: object[];
 }
 
-export interface NftInfo {
+export interface NftData {
 	slug: {
 		current: string;
 	};
