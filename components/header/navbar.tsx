@@ -7,12 +7,16 @@ import ThemeToggle from "./themeToggle";
 import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ConnectWallet from "./walletConnection";
+import AccountModal from "./accountModal";
+import { useAppSelector } from "../../redux/store";
 
 const navItems = [
 	{ name: "home", path: "/" },
 	{ name: "about", path: "/about" },
 	{ name: "whitepaper", path: "/whitepaper" },
 	{ name: "news", path: "/news" },
+	{ name: "demo", path: "/demo" },
 ];
 
 export default function Navbar() {
@@ -20,6 +24,7 @@ export default function Navbar() {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [closeBurger, setCloseBurger] = useState(false);
 	const router = useRouter();
+	const { accountModal } = useAppSelector((state) => state.wallet);
 
 	const toggleMenu = () => {
 		if (menuRef && menuRef.current) {
@@ -30,7 +35,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="flex flex-row w-full items-center mb-5 pr-0 sm:pr-10 bg-white dark:bg-transparent z-10 h-24 shadow-md dark:shadow-none">
+		<nav className="flex flex-row w-full items-center mb-5 pr-0 sm:pr-10 bg-white dark:bg-transparent z-10 h-24 shadow-md dark:shadow-none relative">
 			<Link href="/">
 				<a>
 					<div className="scale-75 -translate-x-8 cursor-pointer hidden lg:block">
@@ -50,7 +55,7 @@ export default function Navbar() {
 				)}
 			</div>
 			<div
-				className="flex flex-col sm:flex-row gap-0 h-screen w-screen sm:w-auto sm:h-24 absolute sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white dark:bg-gray-900 sm:bg-transparent shadow-md sm:shadow-none"
+				className="flex flex-col sm:flex-row gap-0 h-screen w-full sm:w-auto sm:h-24 fixed sm:relative justify-center grow text-center align-middle cursor-pointer -translate-y-full sm:-translate-y-2 bg-white dark:bg-gray-900 sm:bg-transparent shadow-md sm:shadow-none"
 				ref={menuRef}
 			>
 				{navItems.map(({ name, path }, i) => (
@@ -72,12 +77,9 @@ export default function Navbar() {
 					</Link>
 				))}
 			</div>
-			<a href="https://345pi.us/" target="_blank" rel="noreferrer">
-				<div className="absolute right-6 top-6 sm:relative sm:right-0 sm:top-0 flex justify-center items-center cursor-pointer bg-main-500 hover:bg-main-400 px-8 h-12 rounded-full">
-					<h2 className="text-white text-md lg:text-lg">Launch App</h2>
-				</div>
-			</a>
+			<ConnectWallet />
 			<ThemeToggle />
+			{accountModal && <AccountModal />}
 		</nav>
 	);
 }
