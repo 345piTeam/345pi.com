@@ -15,7 +15,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 	};
 
 	return (
-		<div className="relative text-white text-center items-center mt-28 md:mt-0">
+		<div className="relative text-white text-center items-center">
 			<div className="lg:min-w-[550px] relative w-[90vw] md:w-[550px] h-[30em] md:h-[600px] mb-24 md:mb-0">
 				<Image
 					alt="Title background image"

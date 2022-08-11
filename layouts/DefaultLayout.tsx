@@ -7,7 +7,9 @@ export function DefaultLayout({ children }: { children: ReactElement }) {
 	return (
 		<div className="flex flex-col h-screen">
 			<Navbar />
-			<main className="grow">{children}</main>
+			<main className="grow">
+				<div className="mt-24 md:mt-0">{children}</div>
+			</main>
 			<Footer />
 			{/* <ScrollToTop /> */}
 		</div>

@@ -44,6 +44,19 @@ export interface NftData {
 	body: object[];
 }
 
+export interface DemoData {
+	slug: {
+		current: string;
+	};
+	title: string;
+	image: {
+		asset: {
+			_ref: string;
+		};
+	};
+	body: object[];
+}
+
 export interface DarkLord {
 	name: string;
 	userName: string;
