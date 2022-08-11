@@ -1,5 +1,5 @@
 {
-	"name": "345pi.com",
+	"name": "345pi.net",
 	"private": false,
 	"version": "1.0.0",
 	"description": "",
@@ -35,6 +35,6 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/345piTeam/345pi.com.git"
+		"url": "https://github.com/345piTeam/345pi.net.git"
 	}
 }

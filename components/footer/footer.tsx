@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 
 const socialLinks = [
 	{ network: "linkedin", href: "http://www.linkedin.com/company/345pi/" },
-	{ network: "github", href: "https://github.com/345piTeam/345pi.com" },
+	{ network: "github", href: "https://github.com/345piTeam/345pi.net" },
 	{ network: "discord", href: "https://discord.gg/MTUsuEDqMV" },
 	{ network: "email", href: "mailto:info@345pi.com" },
 ];
