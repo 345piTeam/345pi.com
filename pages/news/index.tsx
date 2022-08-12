@@ -15,7 +15,6 @@ export default function News({ posts }: Prop) {
 			<Head>
 				<title>345pi - news</title>
 				<meta name="description" content="all posted 345pi news" />
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-5">
