@@ -47,7 +47,7 @@ contract DarkLord is ERC721, ERC721URIStorage, Ownable {
         owners[to] = true;
     }
 
-    function isOwner(address a) public view returns (bool) {
-        return owners[a];
+    function isOwner() public view returns (bool) {
+        return owners[msg.sender];
     }
 }
