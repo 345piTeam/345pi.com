@@ -1,14 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 const ScrollToTop = () => {
 	const [scrollPosition, setScrollPosition] = useState(0);
 	const buttonRef = useRef<HTMLButtonElement>(null);
-	const handleScroll = () => {
+	const handleScroll = useCallback(() => {
 		const position = window.pageYOffset;
 		setScrollPosition(position);
-		console.log(scrollPosition);
-	};
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll, { passive: true });
@@ -16,7 +15,7 @@ const ScrollToTop = () => {
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, []);
+	}, [handleScroll]);
 
 	useEffect(() => {
 		if (buttonRef && buttonRef.current) {
