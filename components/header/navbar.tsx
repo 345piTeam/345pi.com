@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import pi345_logo from "../../public/345pi_logo.png";
+import pi345_logo from "../../public/345pi_logo2.png";
 import pi345_logo_dark from "../../public/345pi_logo_darkMode.png";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./themeToggle";
