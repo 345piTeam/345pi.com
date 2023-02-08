@@ -26,7 +26,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 			</div>
 			<div className="absolute top-44 w-full flex flex-col justify-between items-center px-1 md:h-[400px]">
 				<h1 className="w-[85%] text-[1.5rem] md:text-[2.8rem]">
-					We Play Calculus Games for Cryptocurrency
+					Let's Play Calculus Games for Cryptocurrency
 				</h1>
 			</div>
 			<Link href="/demo">
