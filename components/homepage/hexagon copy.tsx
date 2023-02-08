@@ -31,7 +31,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 			</div>
 			<Link href="/demo">
 				<div className="absolute top-[19rem] md:top-[26rem] left-[50%] -translate-x-[50%] bg-white text-md md:text-xl text-black dark:text-white dark:bg-slate-800 p-3 border-slate-800 border-2 rounded-full cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out h-fit transform-gpu">
-					Demo
+					Try the Demo
 				</div>
 			</Link>
 			<div className="text-black dark:text-white text-xl absolute top-[450px] md:top-[550px] dark:bottom-[200px] flex flex-row justify-between w-full">
