@@ -27,12 +27,12 @@ const Home: FunctionComponent<Props> = ({ info, nftData }) => {
 			</Head>
 			<main>
 				<div className="flex flex-row justify-evenly gap-0 items-top">
-					<NetworkVideo className="max-w-[450px] opacity-50 hidden lg:block" />
+					{/* <NetworkVideo className="max-w-[450px] opacity-50 hidden lg:block" /> */}
 					<TitleHexagon contentRef={contentRef} />
-					<NetworkVideo
+					{/* <NetworkVideo
 						className="max-w-[450px] opacity-50 hidden lg:block"
 						flipped={true}
-					/>
+					/> */}
 				</div>
 				<HomescreenInfo info={info} myRef={contentRef} />
 				<div className="flex flex-row w-full justify-center mt-5">

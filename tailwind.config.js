@@ -11,12 +11,16 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+				sans: ["Nunito Sans", ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				main: {
 					400: "#2D8044",
 					500: "#3AA859",
+					600: "#A2EC72",
+					700: "#FFD153",
+					800: "#E8B529",
+					900: "#68C92A",
 				},
 			},
 		},
