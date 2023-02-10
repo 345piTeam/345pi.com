@@ -51,10 +51,10 @@ const ConnectWallet = () => {
 
 	return (
 		<div
-			className="absolute right-6 top-6 md:relative md:right-0 md:top-0 flex justify-center items-center cursor-pointer bg-blue-500 hover:bg-blue-400 px-8 h-12 rounded-full"
+			className="absolute right-6 top-6 md:relative md:right-0 md:top-0 flex justify-center items-center cursor-pointer bg-main-700 hover:bg-main-900 px-8 h-12 rounded-full"
 			onClick={toggleWallet}
 		>
-			<h2 className="text-white text-md lg:text-lg">
+			<h2 className="text-black text-md lg:text-lg">
 				{address !== ""
 					? (ensName !== "" ? ensName : getShortAddress(address)) + ""
 					: "Connect Wallet"}
