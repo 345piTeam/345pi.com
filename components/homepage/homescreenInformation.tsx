@@ -32,7 +32,7 @@ const HomescreenInfo: FunctionComponent<Props> = ({ info, myRef }) => {
 							/>
 						</div>
 						<div className="flex flex-col gap-6 p-5 max-w-prose">
-							<h1 className="font-bold text-6xl">{cell.title}</h1>
+							<h1 className="font-bold text-4xl">{cell.title}</h1>
 							<PortableText className="text-2xl" content={cell.body} />
 						</div>
 					</div>
