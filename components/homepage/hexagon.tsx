@@ -15,7 +15,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 	};
 
 	return (
-		<div className="flex flex-col md:w-[80%]">
+		<div className="flex flex-col">
  				<div className="flex justify-evenly items-center -gap-6 lg:gap-0 text-center lg:flex-row-reverse flex-col lg:text-left  mt-32 lg:m-16">
 					<div className="relative  w-72 md:w-[100%]">
 						<Image
