@@ -37,7 +37,7 @@ const TitleHexagon: React.FC<Props> = ({ contentRef }) => {
 							</Link>
 								<div className="m-2 flex-1 w-48 text-[1.2rem] md:text-[1.2rem] text-black font-bold bg-green rounded-full bg-main-600 text-center py-2 cursor-pointer border-b-4 border-main-900 hover:border-t-2 hover:border-b-0">
 									<a
-										href="https://discord.gg/3UwWPeqE3F"
+										href="https://discord.gg/qRFCkbNjYT"
 										target="_blank"
 										rel="noreferrer"
 										>
